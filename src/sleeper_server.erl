@@ -35,8 +35,7 @@ handle_cast(_Request, State) ->
 
 
 handle_info(sleep, State) ->
-    sleeper:sleep(10),
-    timer:sleep(10),
+    sleeper:sleep(bif2),
     self() ! sleep,
     {noreply, State};
 handle_info(_Info, State) ->
